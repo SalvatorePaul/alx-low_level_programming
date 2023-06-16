@@ -3,17 +3,17 @@
 #include<time.h>
 
 /**
- * main - "Prints numbers"
+ * main - Entry point
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int i;
+	char low;
 
-	for (i = "0"; i < "10"; i++)
-	printf("%d", i);
-	printf("\n");
+	for (low = 'z'; low = 'a'; low--)
+	putchar(low);
+	putchar('\n');
+
 	return (0);
 }
-
