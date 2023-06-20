@@ -2,7 +2,7 @@
 
 /**
  * main - check the code.
- *
+ * Description: prints a function that checks for lowercase character
  * Return: Always 0.
  */
 
