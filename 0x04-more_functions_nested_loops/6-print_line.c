@@ -4,13 +4,11 @@
  * print_line - draws a straight line
  * @n: is the number of times the character _ should be printed
  * The line should end with a new line
- *
- * Return: none
+ * Return: None
  */
-
 void print_line(int n)
 {
-	int i =0;
+	int i = 0;
 
 	if (n <= 0)
 	{
@@ -20,8 +18,9 @@ void print_line(int n)
 	{
 	while (i < n)
 	{
-	_putchar('-');
+	_putchar('_');
 	i++;
 	}
 	_putchar('\n');
+}
 }
