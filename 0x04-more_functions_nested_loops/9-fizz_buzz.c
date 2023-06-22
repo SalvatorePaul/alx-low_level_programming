@@ -1,36 +1,29 @@
 #include <stdio.h>
-
 /**
- * main - prints the numbers from 1 to 100 followed by a new line
- * prints fizz for multiples of 3
- * prints buzz for multibles of 5
- * prints fizzbuss for multiples of 3 and 5
- * Return: Always 0
+ * main - Prints the numbers between 1 - 100,
+ * for multiples of 3, print Fizz
+ * for multiples of 5, print Buzz
+ * for multiples of 3 and 5, print FizzBuzz.
+ *
+ * Return: 0 on success.
  */
-
 int main(void)
 {
-	int n;
+	int multiple;
 
-	for (n = 1; n <= 100; n++)
+	for (multiple = 1; multiple <= 100; multiple++)
 	{
-		if (n % 3 == 0 && n % 5 == 0)
-		{
-			printf("FizzBuzz ");
-		}
-		else if (n % 3 == 0)
-		{
-			printf("Fizz ");
-		}
-		else if (n % 5 == 0)
-		{
-			printf("Buzz ");
-		}
+		if (multiple % 3 == 0 && multiple % 5 == 0)
+			printf("FizzBuzz");
+		else if (multiple % 3 == 0)
+			printf("Fizz");
+		else if (multiple % 5 == 0)
+			printf("Buzz");
 		else
-		{
-			printf("%d ", n);
+			printf("%d", multiple);
+		if (multiple != 100)
+			putchar(' ');
 	}
-	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
