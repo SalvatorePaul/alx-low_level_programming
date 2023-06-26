@@ -20,17 +20,16 @@ int _atoi(char *s)
 	i++;
 	}
 	/* Handle sign */
+	while (s[i] == '-' || s[i] == '+')
+	{
 	if (s[i] == '-')
-	{
-	sign = -1;
-	i++;
-	}
-	else if (s[i] == '+')
-	{
+	sign *= -1;
 	i++;
 	}
 	/* Convert digits to integer */
-	while (s[i] >= '0' && s[i] <= '9')
+	while (s[i] != '\0')
+	{
+	if (s[i] >= '0' && s[i] <= '9')
 	{
 	/* Check for potential overflow before adding the next digit */
 	if (result > (INT_MAX - (s[i] - '0')) / 10)
@@ -39,7 +38,14 @@ int _atoi(char *s)
 	return ((sign == 1) ? INT_MAX : INT_MIN);
 	}
 	result = result * 10 + (s[i] - '0');
+	}
+	else
+	{
+	/* Ignore non-numeric characters */
+	break;
+	}
 	i++;
 	}
 	return (result * sign);
 }
+
