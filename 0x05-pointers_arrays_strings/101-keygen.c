@@ -22,7 +22,6 @@ int main() {
     srand(time(NULL));
 
     /* Generate a random password */
-    char password[PASSWORD_LENGTH];
     generateRandomPassword(password);
 
     /* Print the generated password */
