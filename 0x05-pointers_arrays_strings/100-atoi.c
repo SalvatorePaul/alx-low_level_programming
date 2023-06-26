@@ -36,10 +36,10 @@ int _atoi(char *s)
 	if (result > (INT_MAX - (s[i] - '0')) / 10)
 	{
 	/* Overflow occurred, return the maximum or minimum value based on the sign */
-	return (sign == 1) ? INT_MAX : INT_MIN;
+	return ((sign == 1) ? INT_MAX : INT_MIN);
 	}
 	result = result * 10 + (s[i] - '0');
 	i++;
 	}
-	return result * sign;
+	return (result * sign);
 }
