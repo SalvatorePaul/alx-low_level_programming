@@ -1,51 +1,25 @@
 #include "main.h"
-#include <stdio.h>
-#include <limits.h>
-
 /**
- * _atoi - function that convert a string to an integer.
- * @s: string to be converted
- * Return: If there are no numbers in the string, the function must return 0
- */
-
+ * _atoi - changes a string into an integer
+ *
+ * @s: the string input parameter
+ *
+ * Return: change integer from string
+*/
 int _atoi(char *s)
 {
-	int sign = 1; /* Positive by default */
-	int result = 0;
-	int i = 0;
+	unsigned int num = 0;
+	int sign = 1;
 
-	/* Handle leading whitespace */
-	while (s[i] == ' ')
+	for (; *s != '\0'; s++)
 	{
-	i++;
+		if (*s == '-')
+			sign *= -1;
+		else if (*s >= '0' && *s <= '9')
+			num = (num * 10) + (*s - '0');
+		else if (num > 0)
+			break;
 	}
-	/* Handle sign */
-	while (s[i] == '-' || s[i] == '+')
-	{
-	if (s[i] == '-')
-	sign *= -1;
-	i++;
-	}
-	/* Convert digits to integer */
-	while (s[i] != '\0')
-	{
-	if (s[i] >= '0' && s[i] <= '9')
-	{
-	/* Check for potential overflow before adding the next digit */
-	if (result > (INT_MAX - (s[i] - '0')) / 10)
-	{
-	/* Overflow occurred, return the maximum or minimum value based on the sign */
-	return ((sign == 1) ? INT_MAX : INT_MIN);
-	}
-	result = result * 10 + (s[i] - '0');
-	}
-	else
-	{
-	/* Ignore non-numeric characters */
-	break;
-	}
-	i++;
-	}
-	return (result * sign);
+
+	return (num * sign);
 }
-
