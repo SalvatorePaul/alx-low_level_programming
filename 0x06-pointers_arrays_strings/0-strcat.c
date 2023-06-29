@@ -10,18 +10,14 @@
 
 char* _strcat(char* dest, char* src)
 {
-	char* ptr = src;
-	
-	while (*ptr != '\0')
+	int index, indexSrc;
+
+	for (index = 0; dest[index]; index++)
+		;
+	for (indexSrc = 0; src[indexSrc]; indexSrc++, index++)
 	{
-		ptr++;
+		dest[index] = src[indexSrc];
 	}
-	while (*dest != '\0')
-	{
-		*ptr = *dest;
-		ptr++;
-		dest++;
-	}
-	*ptr = '\0';
+	dest[index] = '\0';
 	return (dest);
 }
