@@ -10,12 +10,19 @@
  * if str1 > str2, the positive difference of the first unmatched characters
  */
 
-int _strcmp(char* s1, char* s2)
+int _strcmp(char *s1, char *s2)
 {
-while (*s1 && *s2 && s1 == *s2)
-{
-s1++;
-s2++;
-}
-return (*s1 - *s2);
+	int equal = 0;
+
+	while (*s1)
+	{
+		if (*s1 != *s2)
+		{
+			equal = ((int)*s1 - 48) - ((int)*s2 - 48);
+			break;
+		}
+		s1++;
+		s2++;
+	}
+	return (equal);
 }
