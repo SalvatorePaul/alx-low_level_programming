@@ -3,8 +3,8 @@
 
 /**
  * _pow_recursion - a function that returns the value of x raised to the power of y.
- * @x: x raised to the power of y
- * @y: value to be raised to x
+ * @x: the base number
+ * @y: the exponent
  *
  * Return: If y is lower than 0, the function should return -1
  */
