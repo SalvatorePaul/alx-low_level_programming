@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * wildcmp -  a function that compares two strings 
+ * wildcmp - a function that compares two strings
  * @s1: string 1
  * @s2: string 2
  *
