@@ -1,0 +1,27 @@
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * is_prime_number - function that returns prime mumber
+ * @n: number
+ *
+ * Return: 1 if the input integer is a prime number, otherwise return 0.
+ */
+
+int is_prime_number(int n)
+{
+	if (n < 2)
+	{
+	return (0);
+	}
+	int sqrtN = sqrt(n);
+
+	for (int i = 2; i <= sqrtN; i++)
+	{
+	if (n % i == 0)
+	{
+	return (0);
+	}
+	}
+}
+
