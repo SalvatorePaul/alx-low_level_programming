@@ -17,7 +17,7 @@ int is_prime_number(int n)
 	}
 	int sqrtN = sqrt(n);
 
-	for (n = 2; i <= sqrtN; n++)
+	for (i = 2; i <= sqrtN; i++)
 	{
 	if (n % i == 0)
 	{
