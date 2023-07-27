@@ -14,27 +14,20 @@
  */
 size_t print_list(const list_t *h)
 {
-	const list_t *current = h;
-	size_t count = 0;
+	int count = 0;
 
-	printf("[");
-	while (current != NULL)
+	
+	while (h != NULL)
 	{
-		if (current->str != NULL)
-		printf("%s", current->str);
-	}
+	if (h->str == NULL)
+		printf("[0] (nil)");
+	
 	else
 	{
-		printf("(nil)");
+		printf("[%d] %s", h->len, h->str);
 	}
-	current = current->next;
 	count++;
-	
-	if (current != NULL)
-	{
-		printf(", ");
+	h = h->next;
 	}
-	printf("]\n");
-	
-	return count;
+	return (count);
 }
