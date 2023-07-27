@@ -10,12 +10,9 @@ void free_list(list_t *head)
 {
 	if (head == NULL)
 		return;
-	
 	/* Recursively free the rest of the list from the current node */
 	free_list(head->next);
-	
 	free(head->str);
-	
 	/* Free the current node itself */
 	free(head);
 }
