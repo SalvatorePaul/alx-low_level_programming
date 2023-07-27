@@ -2,17 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 #include "lists.h"
-#include <stddef.h>
-
-/**
- * list_node - Definition of the list node structure
- */
-typedef struct list_node
-{
-	char *str;
-	struct list_node *next;
-}
-list_t;
 
 /**
  * size_t - size of t
