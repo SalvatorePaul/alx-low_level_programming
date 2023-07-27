@@ -16,12 +16,13 @@
 /* Node structure */
 typedef struct list_s
 {
-	char *str;	/* Points to a dynamically allocated string */
-	unsigned int len;	/* Length of the string */
-	struct list_s *next;	/* Points to the next node in the list */
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
 /* Function prototypes */
+int _putchar(char c);
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
 list_t *add_node(list_t **head, const char *str);
