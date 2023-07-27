@@ -2,7 +2,7 @@
 
 /**
  * print_Text - the text to be printed before main
- * Return: void
+ * Return: no return
  */
 
 void print_Text(void)
