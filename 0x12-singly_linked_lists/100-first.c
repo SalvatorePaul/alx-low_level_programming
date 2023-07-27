@@ -1,10 +1,11 @@
 #include "lists.h"
+
 /**
- * printText - the text to be printed
+ * print_Text - the text to be printed before main
  * Return: void
  */
 
-void printText(void)
+void print_Text(void)
 {
 	printf("You're beat! and yet, you must allow,");
 	printf("\nI bore my house upon my back!\n");
