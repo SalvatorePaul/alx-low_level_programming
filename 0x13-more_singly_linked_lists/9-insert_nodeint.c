@@ -25,15 +25,15 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		/*If the new node should be added at the beginning (index 0)*/
 		new_node->next = *head;
-		*head = new_node;
 		/*Update the head pointer to the new node*/
-		return (new_node);
+		*head = new_node;
 		/*Return the address of the new element (new node)*/
+		return (new_node);
 	}
 	/*Find the node at the position before the desired index*/
-	listint_t *previous = *head;
+	previous = *head;
 	
-	for (unsigned int i = 0; i < idx - 1; i++)
+	for (i = 0; i < idx - 1; i++)
 	{
 		if (previous == NULL)
 		{
