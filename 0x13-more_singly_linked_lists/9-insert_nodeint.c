@@ -20,7 +20,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	new_node->n = n;
 	/*Assign data to the new node*/
-	
 	if (idx == 0)
 	{
 		/*If the new node should be added at the beginning (index 0)*/
@@ -32,7 +31,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	/*Find the node at the position before the desired index*/
 	previous = *head;
-	
 	for (i = 0; i < idx - 1; i++)
 	{
 		if (previous == NULL)
@@ -46,7 +44,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	/*Link the new node to the next node after the desired index*/
 	new_node->next = previous->next;
 	previous->next = new_node;
-	
 	/*Return the address of the new element (new node)*/
 	return (new_node);
 }
