@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
 * flip_bits - returns the number of bits needed to be flipped to get from one
