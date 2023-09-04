@@ -8,7 +8,7 @@
 #define WRITE_ERR "Error: Can't write to %s\n"
 
 /**
- * main - Entry point for the file copying program.
+ * main - Entry point for the file copying program
  *        It copies the contents of one file to another.
  * @argc: Number of command-line arguments.
  * @argv: Array of command-line argument strings.
