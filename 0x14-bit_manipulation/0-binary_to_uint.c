@@ -3,32 +3,39 @@
 #include <stdio.h>
 
 /**
-* binary_to_uint - converts a binary number to an unsigned int
-* @b: string of 1s and 0s in char form
-*
-* Return: Converted number
-* 0 if there are one or more chars in b that are not 0 or 1
-* 0 if b is null
-*/
+ * binary_to_uint - Convert binary string to unsigned int
+ * @b: Pointer to a binary string (composed of '0' and '1' characters)
+ *
+ * Return: The converted unsigned integer, or 0 if invalid input
+ */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int  output = 0, mul = 1;
-	int len = 0;
+	unsigned int answer = 0;
+	unsigned int length;
+	unsigned int idx;
 
-	if (!b)
-		return (0);
-
-	while (b[len])
-		len++;
-
-	for (len -= 1; len >= 0; len--)
+	if (b == NULL)
 	{
-		if (b[len] != '0' && b[len] != '1')
-			return (0);
+		/* Return 0 if the input string is NULL */
+		return (0);
+	}
+	/* Use 'unsigned int' for length type */
+	length = strlen(b);
 
-		output += (b[len] - '0') * mul;
-		mul *= 2;
+	for (idx = 0; idx < length; idx++)
+	{
+		if (b[idx] != '0' && b[idx] != '1')
+		{
+			/* Return 0 if there's a non-binary character in the string */
+			return (0);
+		}
+
+		/* Left shift the result to make space for the next bit */
+		answer = answer << 1;
+
+		/* Set the least significant bit based on the character */
+		answer = answer | (b[idx] - '0');
 	}
 
-	return (output);
+	return (answer);
 }
