@@ -10,23 +10,16 @@
 */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int output = 0, mul = 1;
-	int len = 0;
-
-	if (!b)
+	unsigned int result = 0;
+	
+	if (b == NULL)
 		return (0);
-
-	while (b[len])
-		len++;
-
-	for (len -= 1; len >= 0; len--)
+	while (*b)
 	{
-		if (b[len] != '0' && b[len] != '1')
-			return (0);
-
-		output += (b[len] - '0') * mul;
-		mul *= 2;
+		if (*b != '0' && *b != '1')
+			return (0);/*Invalid character found, return 0*/
+		result = (result << 1) | (*b - '0');/*Convert binary to decimal*/
+		b++;
 	}
-
-	return (output);
+	return (result);
 }
